@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
+    // Invoices and transactions are created by earlier migrations in this sequence.
     public function up(): void
     {
         Schema::create('journal_entries', function (Blueprint $table) {

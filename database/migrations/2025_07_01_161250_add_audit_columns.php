@@ -15,10 +15,6 @@ return new class extends Migration
             $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete()->after('created_at');
             $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete()->after('updated_at');
         });
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete()->after('created_at');
-            $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete()->after('updated_at');
-        });
         Schema::table('customers', function (Blueprint $table) {
             $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete()->after('created_at');
             $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete()->after('updated_at');
@@ -62,12 +58,6 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign('users_created_by_foreign');
             $table->dropForeign('users_updated_by_foreign');
-            $table->dropColumn(['created_by', 'updated_by', 'session_id']);
-        });
-
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropForeign('transactions_created_by_foreign');
-            $table->dropForeign('transactions_updated_by_foreign');
             $table->dropColumn(['created_by', 'updated_by']);
         });
 

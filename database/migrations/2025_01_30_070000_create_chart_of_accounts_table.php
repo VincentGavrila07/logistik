@@ -36,9 +36,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::table('chart_of_accounts', function (Blueprint $table) {
-            $table->dropForeign(['parent_account_id']);
-        });
         Schema::dropIfExists('chart_of_accounts');
     }
 };

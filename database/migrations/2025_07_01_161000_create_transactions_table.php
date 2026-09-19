@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    // Dependencies are created by earlier migrations in this sequence.
     /**
      * Run the migrations.
      */
